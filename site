@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>Xına Kartı Mesajı</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: sans-serif;
+      background: #fff8f9;
+      display: flex;
+      justify-content: center;  /* üfüqi ortalama */
+      align-items: center;      /* şaquli ortalama */
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 24px;
+      color: #c2185b;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="message">Yüklənir...</h1>
+  </div>
+
+  <script>
+    const messages = [
+      "Selfie çəkməyi unutma, bura ən gözəl xatirələrin yeridir 📸✨",
+      "Bu gecənin sehrini gülüşünlə tamamla 🌸😊",
+      "Ən gözəl xatirələr dostlarla yazılır 💕",
+      "Rəqs meydanına çıx və heç nəyi düşünmə 💃🔥",
+      "Bir gülüşünlə məclisi işıqlandır ✨🌟",
+      "Xatirə üçün ən gözəl anı indi yaşa ❤️",
+      "Bu günün fotoları sabahın ən dəyərli xatirəsi olacaq 📷✨",
+      "Parıltını özünlə gətirmisən, bizə də pay ver 🌈💖",
+      "Hər dostluq belə anlarla möhkəmlənir 🤍",
+      "Sən gəlmisənsə, məclis artıq rənglidir 🎉🌸",
+      "Bu gecə çox gül, çox rəqs et və çox xatirə saxla 💃📸",
+      "Dostlarla çəkilən hər foto bir ömürlük hekayədir 💕📷",
+      "Bu anı paylaş, gələcəkdə gülərək xatırla ✨😊",
+      "Xına gecəsinin sehrini sən tamamlayırsan 🌟💖",
+      "Unutma, bu günün xatirəsi sabah danışılacaq ən gözəl hekayədir 💌✨"
+    ];
+
+    let msgIndex = localStorage.getItem("xina_msg");
+    if (msgIndex === null) {
+      msgIndex = Math.floor(Math.random() * messages.length);
+      localStorage.setItem("xina_msg", msgIndex);
+    }
+
+    document.getElementById("message").textContent = messages[msgIndex];
+  </script>
+</body>
+</html>
